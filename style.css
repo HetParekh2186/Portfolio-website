@@ -104,11 +104,51 @@ a:hover {
     color: #e5e9ed;
 }
 
-#hero h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
+#hero .hero-kicker {
+    font-size: 0.95rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    color: #93c5fd;
+    margin-bottom: 1rem;
+}
+
+#hero .hero-summary {
+    font-size: 1.1rem;
+    margin-bottom: 1.75rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 2rem;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-meta span i {
+    margin-right: 0.35rem;
+    color: #60a5fa;
+}
+
+.hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
     margin-bottom: 2rem;
-    color: #e5e9ed;
+}
+
+.hero-links a {
+    color: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid transparent;
+}
+
+.hero-links a:hover {
+    border-color: #60a5fa;
+    color: #93c5fd;
 }
 
 .hero-cta {
@@ -287,6 +327,10 @@ section {
 
 .experience-header {
     margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
 }
 
 .experience-header h3 {

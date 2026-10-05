@@ -1,0 +1,33 @@
+---
+interface Props {
+  name: 'arrow' | 'mail' | 'copy' | 'check' | 'menu' | 'close' | 'sun' | 'moon' | 'github' | 'linkedin';
+  size?: number;
+}
+const { name, size = 16 } = Astro.props;
+const paths: Record<Props['name'], string> = {
+  arrow: 'M6.5 13.5 13.5 6.5M7.5 6.5h6v6',
+  mail: 'M3 5.5h14v9H3zM3.5 6l6.5 5 6.5-5',
+  copy: 'M7 7h9v9H7zM4 13V4h9',
+  check: 'm4.5 10.5 3.5 3.5 7.5-8',
+  menu: 'M3 6h14M3 10h14M3 14h14',
+  close: 'm5 5 10 10M15 5 5 15',
+  sun: 'M10 6.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7ZM10 2v1.5M10 16.5V18M2 10h1.5M16.5 10H18M4.3 4.3l1.1 1.1M14.6 14.6l1.1 1.1M4.3 15.7l1.1-1.1M14.6 5.4l1.1-1.1',
+  moon: 'M16 12.2A6.5 6.5 0 0 1 7.8 4a6.5 6.5 0 1 0 8.2 8.2Z',
+  github:
+    'M7.5 16.5c-3 .9-3-1.5-4.2-1.8M12.5 18v-2.6c0-.8.1-1.4-.4-1.9 2.2-.3 4.4-1.1 4.4-4.8 0-1-.4-1.9-1-2.6.1-.3.4-1.3-.1-2.6 0 0-.8-.3-2.7 1a9 9 0 0 0-4.8 0C6 3.2 5.2 3.5 5.2 3.5c-.5 1.3-.2 2.3-.1 2.6-.6.7-1 1.6-1 2.6 0 3.7 2.2 4.5 4.4 4.8-.4.4-.5.9-.5 1.4V18',
+  linkedin: 'M3.5 3.5h13v13h-13zM6.5 9v4.5M6.5 6.5v.1M9.5 13.5V9M9.5 11c0-1.2.9-2 2-2s2 .8 2 2v2.5',
+};
+---
+
+<svg
+  class="icon"
+  width={size}
+  height={size}
+  viewBox="0 0 20 20"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"><path d={paths[name]}></path></svg
+>

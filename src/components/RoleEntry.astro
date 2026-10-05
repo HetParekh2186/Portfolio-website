@@ -1,0 +1,55 @@
+---
+import Story from './Story.astro';
+import type { Role } from '../data/site';
+
+interface Props {
+  role: Role;
+  areaLabel?: string;
+}
+const { role: r, areaLabel } = Astro.props;
+---
+
+<li class:list={['role', r.area && `area-${r.area}`]} id={r.id}>
+  <div class="role__aside">
+    <p class="role__dates">
+      {r.dates}
+      {r.current && <span class="sr-only">(current)</span>}
+    </p>
+    <p class="role__place">{r.place}</p>
+    {
+      areaLabel && (
+        <p class="tagline">
+          <span class="dot" aria-hidden="true" />
+          {areaLabel}
+        </p>
+      )
+    }
+  </div>
+  <div class="role__body">
+    <h4 class="role__org">{r.org}</h4>
+    <p class="role__title">{r.title}</p>
+    <Story class="role__story" text={r.story} />
+    <ul class="bullets">
+      {r.highlights.map((h) => <li>{h}</li>)}
+    </ul>
+    {
+      r.details && (
+        <details class="more">
+          <summary>How I built it</summary>
+          <ul class="bullets bullets--detail">
+            {r.details.map((d) => (
+              <li>{d}</li>
+            ))}
+          </ul>
+        </details>
+      )
+    }
+    {
+      r.stack && (
+        <p class="builtwith">
+          <span>{r.stackLabel ?? 'Built with'}</span> {r.stack.join(', ')}
+        </p>
+      )
+    }
+  </div>
+</li>

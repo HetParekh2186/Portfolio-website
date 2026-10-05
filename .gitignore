@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+
+# Local design-tool context (not part of the site)
+.impeccable/
+PRODUCT.md
+DESIGN.md

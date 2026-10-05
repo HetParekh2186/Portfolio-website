@@ -1,0 +1,11 @@
+---
+/** Renders a sentence, turning **key phrase** into a hand-marked highlight. */
+interface Props {
+  text: string;
+  class?: string;
+}
+const { text, class: cls } = Astro.props;
+const parts = text.split(/\*\*(.+?)\*\*/);
+---
+
+<p class={cls}>{parts.map((part, i) => (i % 2 ? <mark class="hand">{part}</mark> : part))}</p>
